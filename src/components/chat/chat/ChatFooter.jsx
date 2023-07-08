@@ -35,9 +35,8 @@ const ClipIcon = styled(AttachFileOutlinedIcon)`
     transform:rotate(40deg);
 `
 
-const ChatFooter = ({ sendText })=>{
+const ChatFooter = ({ sendText,setValue,value })=>{
 
-    const [text, setText] = useState("");
 
     return (
         <Component>
@@ -45,8 +44,9 @@ const ChatFooter = ({ sendText })=>{
             <ClipIcon />
             <Search>
                 <InputField placeholder="Type a message" 
-                    onChange={ (e)=> setText(e.target.value) } 
+                    onChange={ (e)=> setValue(e.target.value) } 
                     onKeyUp={(e) => sendText(e)}
+                    value={value}
                 />
             </Search>
             <MicOutlinedIcon />

@@ -1,4 +1,6 @@
 import { Box,styled } from "@mui/material";
+import { getMessages } from "../../../service/API";
+import { useEffect } from "react";
 
 const Wrapper = styled(Box)`
     
@@ -9,7 +11,17 @@ const Component = styled(Box)`
     height:79vh;
     overflow-y:scroll;
 `
-const Messages = ()=>{
+const Messages = ({person,conversation})=>{
+
+    useEffect(() => {
+        const getMessageDetails = async () =>{
+        let data = await getMessages(conversation._id);
+        console.log("Message in Message.jsx ",data);
+
+        }
+        conversation._id && getMessageDetails();
+    },[person._id,conversation._id]);
+
     return (
         <Wrapper>
             <Component>
