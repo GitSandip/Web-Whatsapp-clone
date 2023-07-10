@@ -10,10 +10,14 @@ const ChatBox = () => {
 
 
     const { person, Account } = useContext(AccountContext);
-    // const { Account } = useContext(AccountContext);
+    
     const [conversation, setConversation] = useState({});
 
     const [value, setValue] = useState("");
+
+    const [messageFlag,setMessageFlag] = useState(false);
+
+    const [file, setFile] = useState();
 
     useEffect(() => {
         const getConversationDetails = async () => {
@@ -37,14 +41,21 @@ const ChatBox = () => {
 
             await newMessage(message);
             setValue("");
+            setMessageFlag(prev => !prev);
         }
     }
 
     return (
         <Box>
             <ChatHeader person={person} />
-            <Messages person={person} conversation={conversation} />
-            <ChatFooter sendText={sendText} setValue={setValue} value={value}/>
+            <Messages person={person} conversation={conversation} flag={messageFlag}/>
+            <ChatFooter 
+                sendText = {sendText} 
+                setValue = {setValue} 
+                value = {value}
+                file = {file}
+                setFile = {setFile}
+            />
         </Box>
     )
 }

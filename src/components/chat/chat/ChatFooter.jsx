@@ -2,7 +2,9 @@ import { Box, InputBase,styled } from "@mui/material";
 import EmojiEmotionsOutlinedIcon from '@mui/icons-material/EmojiEmotionsOutlined';
 import AttachFileOutlinedIcon from '@mui/icons-material/AttachFileOutlined';
 import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { uploadFile } from "../../../service/API";
+
 
 const Component= styled(Box)`
     height:50px;
@@ -35,13 +37,39 @@ const ClipIcon = styled(AttachFileOutlinedIcon)`
     transform:rotate(40deg);
 `
 
-const ChatFooter = ({ sendText,setValue,value })=>{
+const ChatFooter = ({ sendText,setValue,value,file,setFile })=>{
 
+
+    useEffect(() => {
+        const setImage = async () =>{
+            if(file){
+                 const data = new FormData();
+                 data.append("name",file.name);
+                 data.append("file",file);
+
+                 await uploadFile(data);
+            }
+        }
+        setImage();
+    },[file]);
+
+    const onFileChange = (e) => {
+        setFile(e.target.files[0]);
+        setValue(e.target.files[0].name);
+    }
 
     return (
         <Component>
             <EmojiEmotionsOutlinedIcon />
-            <ClipIcon />
+            <label htmlFor="fileInput">
+                <ClipIcon />
+            </label>
+            <input 
+                type="file" 
+                style={{display:"none"}} 
+                id="fileInput"
+                onChange = {(e) => onFileChange(e)}
+            />
             <Search>
                 <InputField placeholder="Type a message" 
                     onChange={ (e)=> setValue(e.target.value) } 
