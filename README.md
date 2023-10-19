@@ -17,3 +17,7 @@ https://github.com/GitSandip/API-whatsapp-clone/tree/development
 ## Menu Page
 
 ![MenuPage](https://github.com/GitSandip/Web-Whatsapp-clone/assets/94968169/4ef7ef4d-1307-4f87-81dd-07ecbadd95ec)
+
+## Receiver(user2)
+
+<img width="960" alt="User2" src="https://github.com/GitSandip/Web-Whatsapp-clone/assets/94968169/4c865750-242e-4ed7-89ec-6dfbc363a240">
