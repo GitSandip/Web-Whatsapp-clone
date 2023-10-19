@@ -8,4 +8,12 @@ https://github.com/GitSandip/API-whatsapp-clone/tree/development
 <img width="960" alt="HomePage" src="https://github.com/GitSandip/Web-Whatsapp-clone/assets/94968169/fd5eb5fa-440c-4823-b628-d32884869e4e">
 
 ## Profile Page
+<img width="960" alt="ProfilePage" src="https://github.com/GitSandip/Web-Whatsapp-clone/assets/94968169/c2b23d0f-b2fb-4bd6-bd15-b1bebc33379c">
 
+## User Chat UI
+
+<img width="960" alt="ChatPage" src="https://github.com/GitSandip/Web-Whatsapp-clone/assets/94968169/987b4d03-2af5-4132-be6d-5eb16c467cca">
+
+## Menu Page
+
+![MenuPage](https://github.com/GitSandip/Web-Whatsapp-clone/assets/94968169/4ef7ef4d-1307-4f87-81dd-07ecbadd95ec)
